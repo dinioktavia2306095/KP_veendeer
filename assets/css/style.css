@@ -1,0 +1,294 @@
+/* Vee'n Dee Corner - Main Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-cream: #FAF6F0;
+  --color-cream-light: #FCFAF7;
+  --color-cream-dark: #EFE7DA;
+  --color-sand: #E3D9C9;
+  
+  --color-sage: #6E7B68;
+  --color-sage-dark: #586453;
+  --color-sage-light: #83917C;
+  --color-sage-bg: #74826E;
+  
+  --color-charcoal: #18191A;
+  --color-charcoal-card: #222426;
+  --color-charcoal-border: #313437;
+  --color-charcoal-light: #2A2D30;
+  
+  --color-text-dark: #1E2021;
+  --color-text-muted: #747772;
+  --color-text-light: #F7F5F0;
+  --color-text-light-muted: #A3A7A0;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-handwriting: 'Caveat', cursive, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-script {
+  font-family: var(--font-handwriting);
+}
+
+.tracking-widest-plus {
+  letter-spacing: 0.18em;
+}
+
+/* Editorial Eyebrow Labels */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.section-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.section-eyebrow-light {
+  color: #D3D8CF;
+}
+
+.section-eyebrow-light::before {
+  background-color: #D3D8CF;
+}
+
+/* Base Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.65rem;
+  background-color: #F4EFE6;
+  color: #191B1C;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.65rem;
+  background-color: var(--color-charcoal);
+  color: #F7F4EE;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border: 1px solid var(--color-charcoal);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-dark:hover {
+  background-color: #2F3235;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  background-color: transparent;
+  color: #F5F1E8;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border: 1px solid rgba(245, 241, 232, 0.45);
+  transition: all 0.25s ease;
+}
+
+.btn-outline-light:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.btn-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: inherit;
+  text-decoration: none;
+  transition: gap 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-link-arrow:hover {
+  gap: 0.85rem;
+  opacity: 0.85;
+}
+
+/* Navbar */
+.nav-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #191B1C;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-link {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: #A9ADA6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #FFFFFF;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #E2DACD;
+}
+
+/* Pill Badges */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 9999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: transparent;
+}
+
+.badge-tag {
+  display: inline-block;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background-color: #FFFFFF;
+  color: #1A1C1D;
+}
+
+/* Card Styling */
+.card-dark {
+  background-color: var(--color-charcoal-card);
+  border: 1px solid var(--color-charcoal-border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-dark:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #18191A;
+}
+::-webkit-scrollbar-thumb {
+  background: #464B44;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #687065;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(15, 17, 18, 0.92);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox-modal.active {
+  display: flex;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem !important;
+  }
+}
